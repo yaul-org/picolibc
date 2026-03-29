@@ -32,9 +32,14 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
 # OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-inc_machine_headers_machine = [
-  'fenv.h',
+inc_machine_headers_machine += [
+  '_cdefs.h',
+  'endian.h',
   'fenv-fp.h',
+  'fenv.h',
+  'insn.h',
+  'math.h',
+  'stdlib.h',
 ]
 
 install_headers(inc_machine_headers_machine,

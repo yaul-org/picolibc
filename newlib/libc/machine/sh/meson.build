@@ -34,6 +34,16 @@
 #
 
 srcs_machine = [
+  'abs.c',
+  'labs.c',
+  'llabs.c',
+  'imaxabs.c',
+
+  'div.c',
+  'ldiv.c',
+  'lldiv.c',
+  'imaxdiv.c',
+
   'memcpy.S',
   'memset.S',
   'setjmp.S',
@@ -42,8 +52,33 @@ srcs_machine = [
   'strlen.S',
   'strncpy.S',
   'strncpy.c',
+
+  'random.c',
+  'rand_r.c',
+  'srandom.c',
+
+  # Replace stdlib implementation with TLSF:
+  'malloc-calloc.c',
+  'malloc-cfree.c',
+  'malloc-free.c',
+  'malloc-mallinfo.c',
+  'malloc-malloc.c',
+  'malloc-malloc_stats.c',
+  'malloc-malloc_usable_size.c',
+  'malloc-mallopt.c',
+  'malloc-memalign.c',
+  'malloc-posix_memalign.c',
+  'malloc-pvalloc.c',
+  'malloc-realloc.c',
+  'malloc-trim.c',
+  'malloc-valloc.c',
 ]
 
 subdir('machine')
 
 src_machine = files(srcs_machine)
+
+inc_sys_headers_machine += [
+  'cdefs.h',
+  '_cdefs.h',
+]
